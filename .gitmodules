@@ -1,0 +1,8 @@
+[submodule ".vim/pack/minpac/opt/minpac"]
+	path = .vim/pack/minpac/opt/minpac
+	url = https://github.com/k-takata/minpac.git
+	branch = master
+[submodule ".tmux/bundle/powerline"]
+	path = .tmux/bundle/powerline
+	url = https://github.com/erikw/tmux-powerline.git
+	branch = master
