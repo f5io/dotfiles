@@ -2,42 +2,44 @@
 
 DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
 
-. $DOTFILES/utils/dep.sh 
+. $DOTFILES/utils.sh 
 
 # init submodules and checkout real branches
+init_submodules
 
-git submodule update --init
-git submodule foreach -q --recursive 'branch=$(git config -f $toplevel/.gitmodules submodule.$name.branch); git checkout $branch'
-
-ln -sf $DOTFILES/.brew/bin/brew /usr/local/bin/brew
+# setup brew
+setup_brew
 
 # ensure deps
 dep --force --brew vim
 dep --force --brew zsh
 dep --force --brew git
-dep --force --brew gnupg gpg-agent
+dep --force --brew gnupg gpg
+dep --force --brew nvm
 dep --brew tmux
-dep --brew nvm
 dep --brew kubectl
 dep --brew jq
 dep --brew hub
 dep --brew magic-wormhole wormhole
 dep --brew fzf
 dep --brew pinentry-mac
-
+dep --brew zplug
+dep --brew ag
 
 # install vim
-
-#ln -sf $DOTFILES/.vim ~/.vim
-#ln -sf $DOTFILES/.vimrc ~/.vimrc
-#vim -c ":call minpac#update('', {'do': 'quit'})"
+link .vim
+link .vimrc
+vim -c ":call minpac#update('', {'do': 'quit'})"
 
 # install tmux
-
-#ln -sf $DOTFILES/.tmux ~/.tmux
-#ln -sf $DOTFILES/.tmux.conf ~/.tmux.conf
-#ln -sf $DOTFILES/.tmux-powerlinerc ~/.tmux-powerlinerc
+link .tmux
+link .tmux.conf
+link .tmux-powerlinerc
 
 # install alacritty
+link .alacritty.yml
 
-#ln -sf $DOTFILES/.alacritty.yml ~/.alacritty.yml
+# install zshrc
+link .zshrc
+
+chsh -s $(which zsh)
