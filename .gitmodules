@@ -6,3 +6,7 @@
 	path = .tmux/bundle/powerline
 	url = https://github.com/erikw/tmux-powerline.git
 	branch = master
+[submodule ".brew"]
+	path = .brew
+	url = https://github.com/Homebrew/brew.git
+	branch = master
