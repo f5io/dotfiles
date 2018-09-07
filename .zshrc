@@ -1,5 +1,6 @@
 export DOTFILES=${DOTFILES:-"$HOME/.dotfiles"}
-export PATH=$PATH:/usr/local/bin
+
+. $DOTFILES/pre.sh
 
 export ZPLUG_HOME=`brew --prefix zplug`
 source $ZPLUG_HOME/init.zsh 
