@@ -25,6 +25,7 @@ dep --brew fzf
 dep --brew pinentry-mac
 dep --brew zplug
 dep --brew ag
+dep --brew bat
 
 # install vim
 link .vim

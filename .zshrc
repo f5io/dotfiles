@@ -29,3 +29,5 @@ set -o vi
 zplug load
 
 . $DOTFILES/post.sh
+
+if [ -z "$TMUX" ]; then tmux; fi 
