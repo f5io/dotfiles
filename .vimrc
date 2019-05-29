@@ -12,8 +12,16 @@ let g:NERDTreeShowIgnoredStatus = 1
 " airline settings
 let g:airline_theme = 'term'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#enabled = 1
+
+" ale settings
+let g:ale_completion_enabled = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\}
 
 " load those lovely plugins
 so ~/.vim/plugins.vim
@@ -24,7 +32,7 @@ map [Z :bnext<CR>
 " ctrl+p - look for files
 " ctrl+f - find in files
 map  :Files<CR>
-map  :Ag<CR>
+map  :Rg<CR>
 
 " alt+j move selection/line up
 " alt+k move selection/line down
@@ -77,6 +85,7 @@ noremap <Right> <NOP>
 " imap <right> <nop>
 
 set ttimeoutlen=0
+set completeopt=menu,noinsert
 set nocursorcolumn
 set nocursorline
 set norelativenumber
@@ -89,9 +98,10 @@ set number
 set noswapfile
 set nowrap
 set backspace=indent,eol,start
+set lazyredraw
 
-set t_ts=]1;
 set t_fs=
+set t_ts=]1;
 
 "set termguicolors
 silent! colorscheme termscheme
@@ -100,4 +110,8 @@ filetype plugin indent on
 syntax on
 syntax sync minlines=256
 
+highlight ALEWarning ctermbg=none cterm=underline ctermfg=Yellow
+highlight ALEError ctermbg=none cterm=underline ctermfg=Red
 
+highlight PmenuSel ctermbg=Black ctermfg=White gui=bold
+highlight Pmenu ctermbg=Yellow ctermfg=Black gui=bold

@@ -11,6 +11,7 @@ init_submodules
 setup_brew
 
 # ensure deps
+dep --cask alacritty
 dep --force --brew vim
 dep --force --brew zsh
 dep --force --brew git

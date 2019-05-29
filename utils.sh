@@ -34,6 +34,10 @@ function dep {
         d="$2"
         install="HOMEBREW_NO_AUTO_UPDATE=1 brew install $d"
         shift;;
+      -c|--cask)
+        d="$2"
+        intall="HOMEBREW_NO_AUTO_UPDATE=1 brew cask install $d"
+        shift;;
       -i|--install)
         install="$2"
         shift;;

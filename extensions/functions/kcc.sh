@@ -1,3 +1,9 @@
 function kcc {
-  echo "⎈ `kubectl config current-context | sed -n -e 's/.*\(paybase-\([a-z]*\)\).*/\1/p'`"
+  local prefix="⎈"
+  local cc=`kubectl config current-context`
+  if [ "$cc" = "minikube" ]; then
+    echo "$prefix $cc"
+  else
+    echo "$prefix `echo \"$cc\" | sed -n -e 's/.*paybase-\([a-z]*\).*/\1/p'`"
+  fi
 }

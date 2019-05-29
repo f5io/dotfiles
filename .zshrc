@@ -7,6 +7,7 @@ source $ZPLUG_HOME/init.zsh
 
 zplug "rupa/z", use:z.sh
 zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tmux,fzf}"
+zplug "b4b4r07/enhancd", use:init.sh
 zplug "lukechilds/zsh-nvm"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
