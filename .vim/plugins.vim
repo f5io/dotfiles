@@ -15,7 +15,13 @@ call minpac#add('junegunn/fzf')
 call minpac#add('junegunn/fzf.vim')
 
 " syntax
-call minpac#add('sheerun/vim-polyglot')
+call minpac#add('stephpy/vim-yaml')
+call minpac#add('rust-lang/rust.vim')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('leafgarland/typescript-vim')
+call minpac#add('maxmellon/vim-jsx-pretty')
+call minpac#add('jparise/vim-graphql')
+call minpac#add('leafOfTree/vim-svelte-plugin')
 
 " utils
 " ctrl+n - find next occurence
@@ -25,7 +31,7 @@ call minpac#add('terryma/vim-multiple-cursors')
 call minpac#add('tpope/vim-surround')
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('editorconfig/editorconfig-vim')
-call minpac#add('w0rp/ale')
+call minpac#add('neoclide/coc.nvim', {'branch':'release'})
 
 " <enter> - context selection, repeat goes outwards
 call minpac#add('gcmt/wildfire.vim')
